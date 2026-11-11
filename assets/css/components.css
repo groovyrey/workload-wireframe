@@ -371,6 +371,11 @@
   min-width: 160px;
 }
 
+.toolbar__count {
+  margin-left: auto;
+  padding-bottom: 8px;
+}
+
 .list {
   list-style: none;
   padding: 0;
