@@ -111,6 +111,24 @@
     return { group: "", label: "" };
   }
 
+  function roleSwitch(role, id) {
+    var wrap = el("label", "role-switch");
+    wrap.appendChild(el("span", null, "View as"));
+    var select = el("select");
+    select.id = id;
+    [["teacher", "Teacher"], ["admin", "School head"]].forEach(function (pair) {
+      var option = el("option", null, pair[1]);
+      option.value = pair[0];
+      if (pair[0] === role) option.selected = true;
+      select.appendChild(option);
+    });
+    select.addEventListener("change", function () {
+      window.location.href = HOME[select.value];
+    });
+    wrap.appendChild(select);
+    return wrap;
+  }
+
   function buildTopbar(role, activeKey) {
     var top = document.getElementById("app-top");
     if (!top) return;
@@ -133,22 +151,7 @@
     top.appendChild(left);
 
     var right = el("div", "app__right");
-
-    var switchWrap = el("label", "role-switch");
-    switchWrap.appendChild(el("span", null, "View as"));
-    var select = el("select");
-    select.id = "role-switch";
-    [["teacher", "Teacher"], ["admin", "School head"]].forEach(function (pair) {
-      var option = el("option", null, pair[1]);
-      option.value = pair[0];
-      if (pair[0] === role) option.selected = true;
-      select.appendChild(option);
-    });
-    select.addEventListener("change", function () {
-      window.location.href = HOME[select.value];
-    });
-    switchWrap.appendChild(select);
-    right.appendChild(switchWrap);
+    right.appendChild(roleSwitch(role, "role-switch"));
 
     var user = el("div", "app__user");
     user.appendChild(icon("person"));
@@ -198,6 +201,12 @@
         nav.appendChild(link);
       });
     });
+
+    if (nav) {
+      var roleWrap = roleSwitch(role, "role-switch-nav");
+      roleWrap.className = "role-switch nav__role";
+      nav.appendChild(roleWrap);
+    }
   }
 
   function init() {

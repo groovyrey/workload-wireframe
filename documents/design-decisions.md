@@ -34,7 +34,7 @@ The permission matrix on the users and access screen is the single statement of 
 
 ## Responsive without a separate design
 
-The shell keeps the sidebar on desktop and turns it into an off-canvas drawer below 900 pixels, opened by a hamburger button. The drawer keeps the same icons and labels, closes with the close button, the overlay, or Escape, and restores focus to the button. Stat rows and two-column layouts stack. The timetable compresses but stays readable. Teachers are likely to use phones, and administrators desktops, so both are handled from the same markup.
+The shell keeps the sidebar on desktop and turns it into an off-canvas drawer below 900 pixels, opened by a hamburger button. The drawer keeps the same icons and labels and holds the role switch on mobile, closes with the close button, the overlay, or Escape, and restores focus to the button. Stat rows and two-column layouts stack. The timetable compresses but stays readable. Teachers are likely to use phones, and administrators desktops, so both are handled from the same markup.
 
 ## Folder per screen
 

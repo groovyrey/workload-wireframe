@@ -65,6 +65,10 @@
   display: none;
 }
 
+.app__nav .nav__role {
+  display: none;
+}
+
 .nav-overlay {
   display: none;
 }
@@ -354,7 +358,21 @@
     gap: var(--space-2);
   }
 
-  .role-switch {
+  .app__nav .nav__role {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-2);
+    margin-top: var(--space-4);
+    padding: var(--space-3) var(--space-2) 0;
+    border-top: var(--hair-strong);
+  }
+
+  .app__nav .nav__role select {
+    width: 100%;
+  }
+
+  .app__top .role-switch {
     display: none;
   }
 }
