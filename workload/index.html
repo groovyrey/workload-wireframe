@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Workload | Faculty Workload System</title>
+<link rel="stylesheet" href="../assets/css/tokens.css">
+<link rel="stylesheet" href="../assets/css/app.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+<script src="../assets/js/shell.js" defer></script>
+<script src="../assets/js/app.js" defer></script>
+</head>
+<body class="app-body" data-role="teacher" data-screen="workload" data-user="A. Dela Cruz">
+<div class="app">
+  <header class="app__top" id="app-top"></header>
+  <nav class="app__nav" id="app-nav" aria-label="Primary"></nav>
+  <main class="app__main">
+    <div class="section__head">
+      <div>
+        <h1 class="section__title">Workload and schedule</h1>
+        <p class="hint">Assigned teaching load for SY 2026-2027</p>
+      </div>
+      <button class="btn" type="button">Add teaching load</button>
+    </div>
+
+    <div class="tabs" data-tabs>
+      <button class="tab" type="button" data-tab data-target="panel-loads" aria-selected="true">Assigned loads</button>
+      <button class="tab" type="button" data-tab data-target="panel-timetable" aria-selected="false">Weekly timetable</button>
+    </div>
+
+    <div class="grid grid--sidebar">
+      <div class="section">
+        <div class="panel tabpanel" id="panel-loads">
+          <div class="panel__head"><span class="panel__title">Assigned loads</span><span class="panel__sub">4 records, 24 hours per week</span></div>
+          <table class="wf-table">
+            <thead><tr><th>Subject</th><th>Strand or section</th><th class="num">Hours</th><th>Days</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td>General Mathematics</td><td>11-STEM-A</td><td class="num">6</td><td>MWF</td><td class="status status--done">Confirmed</td></tr>
+              <tr><td>General Mathematics</td><td>11-STEM-B</td><td class="num">6</td><td>MWF</td><td class="status status--done">Confirmed</td></tr>
+              <tr><td>Pre-Calculus</td><td>11-ABM-A</td><td class="num">6</td><td>TTh</td><td class="status status--done">Confirmed</td></tr>
+              <tr><td>Mathematics in the Modern World</td><td>11-ABM-B</td><td class="num">6</td><td>TTh</td><td class="status status--pending">Pending approval</td></tr>
+            </tbody>
+          </table>
+          <p class="hint mt-3">Total attributed load is 24 hours. Advisory and documentation tasks are tracked separately in Tasks.</p>
+        </div>
+
+        <div class="panel tabpanel" id="panel-timetable" hidden>
+          <div class="panel__head"><span class="panel__title">Weekly timetable</span><span class="panel__sub">Recorded schedule</span></div>
+          <div class="schedule">
+            <div class="h">Time</div><div class="h">Mon</div><div class="h">Tue</div><div class="h">Wed</div><div class="h">Thu</div><div class="h">Fri</div>
+            <div>7:30</div><div class="slot">11-STEM-A</div><div class="slot">11-STEM-B</div><div class="slot slot--dash">Prep</div><div class="slot">11-STEM-A</div><div class="slot">11-STEM-B</div>
+            <div>8:30</div><div class="slot">11-STEM-A</div><div class="slot">11-STEM-B</div><div class="slot slot--dash">Prep</div><div class="slot">11-STEM-A</div><div class="slot">11-STEM-B</div>
+            <div>9:30</div><div class="slot">11-ABM-A</div><div class="slot slot--dash">Prep</div><div class="slot">11-ABM-A</div><div class="slot">11-STEM-B</div><div class="slot slot--dash">Prep</div>
+            <div>10:30</div><div class="slot slot--dash">Documentation</div><div class="slot">11-ABM-B</div><div class="slot">11-ABM-B</div><div class="slot slot--dash">Documentation</div><div class="slot">11-ABM-B</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="panel">
+          <div class="panel__head"><span class="panel__title">Add teaching load</span><span class="panel__sub">New record</span></div>
+          <div class="form-row"><label for="load-subject">Subject</label><select class="input" id="load-subject"><option>Select subject</option><option>General Mathematics</option><option>Pre-Calculus</option></select></div>
+          <div class="form-row"><label for="load-section">Strand or section</label><select class="input" id="load-section"><option>Select section</option><option>11-STEM-A</option><option>11-STEM-B</option><option>11-ABM-A</option><option>11-ABM-B</option></select></div>
+          <div class="grid grid--2">
+            <div class="form-row"><label for="load-hours">Hours per week</label><input class="input" id="load-hours" type="number" placeholder="0" min="0"></div>
+            <div class="form-row"><label for="load-days">Days</label><input class="input" id="load-days" type="text" placeholder="MWF"></div>
+          </div>
+          <div class="form-row"><label for="load-time">Start time</label><input class="input" id="load-time" type="time" value="07:30"></div>
+          <button class="btn" type="button">Save load</button>
+          <p class="note note--warn mt-3">Overlapping section, room, or teacher schedules block a record until resolved.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+</body>
+</html>

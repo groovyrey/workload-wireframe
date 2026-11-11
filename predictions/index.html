@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Predictions | Faculty Workload System</title>
+<link rel="stylesheet" href="../assets/css/tokens.css">
+<link rel="stylesheet" href="../assets/css/app.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+<script src="../assets/js/shell.js" defer></script>
+<script src="../assets/js/app.js" defer></script>
+</head>
+<body class="app-body" data-role="admin" data-screen="predictions" data-user="R. Centeno">
+<div class="app">
+  <header class="app__top" id="app-top"></header>
+  <nav class="app__nav" id="app-nav" aria-label="Primary"></nav>
+  <main class="app__main">
+    <div class="section__head">
+      <div>
+        <h1 class="section__title">Predicted delay risk</h1>
+        <p class="hint">Estimates are shown separately from recorded data</p>
+      </div>
+      <button class="btn btn--ghost" type="button">Re-score</button>
+    </div>
+
+    <div class="toolbar">
+      <div class="form-row grow"><label for="pred-model">Model</label><select class="input" id="pred-model"><option>Gradient boosted trees</option><option>Logistic regression</option></select></div>
+      <div class="form-row"><label for="pred-threshold">Risk threshold</label><select class="input" id="pred-threshold"><option>0.50</option><option>0.60</option><option>0.70</option></select></div>
+      <div class="form-row"><label for="pred-period">Period</label><select class="input" id="pred-period"><option>Quarter 2</option><option>Quarter 1</option></select></div>
+    </div>
+
+    <div class="tabs" data-tabs>
+      <button class="tab" type="button" data-tab data-target="panel-sufficient" aria-selected="true">Sufficient data</button>
+      <button class="tab" type="button" data-tab data-target="panel-insufficient" aria-selected="false">Insufficient data</button>
+      <button class="tab" type="button" data-tab data-target="panel-synthetic" aria-selected="false">Synthetic demo</button>
+    </div>
+
+    <div class="grid grid--sidebar">
+      <div class="section">
+        <div class="panel tabpanel" id="panel-sufficient">
+          <div class="panel__head"><span class="panel__title">Tasks at risk</span><span class="state state--active">Predicted, not recorded</span></div>
+          <table class="wf-table">
+            <thead><tr><th>Task</th><th>Teacher</th><th>Due</th><th class="num">Risk</th><th>Top factor</th></tr></thead>
+            <tbody>
+              <tr><td>Item analysis, Section B</td><td>T02</td><td>11 Nov</td><td class="num">0.81</td><td>Prior late submissions</td></tr>
+              <tr><td>Class records, 4 sections</td><td>T05</td><td>12 Nov</td><td class="num">0.74</td><td>High assigned load</td></tr>
+              <tr><td>Advisory meeting minutes</td><td>T02</td><td>13 Nov</td><td class="num">0.63</td><td>Two deadlines same day</td></tr>
+              <tr><td>Lesson plans, Week 4</td><td>T08</td><td>13 Nov</td><td class="num">0.57</td><td>Short time since assignment</td></tr>
+              <tr><td>Report cards, 2 sections</td><td>T03</td><td>14 Nov</td><td class="num">0.52</td><td>No prior record for task type</td></tr>
+            </tbody>
+          </table>
+          <p class="hint mt-3">Risk is the estimated chance a task is submitted after its due date. It is decision support, not a finding of fault.</p>
+        </div>
+
+        <div class="tabpanel" id="panel-insufficient" hidden>
+          <div class="empty"><strong>Not enough labeled history to score reliably</strong>180 records are required and 64 are available. Add completed task records or widen the period, then re-score.</div>
+        </div>
+
+        <div class="panel panel--dash tabpanel" id="panel-synthetic" hidden>
+          <div class="panel__sub">Synthetic demo</div>
+          <p class="mt-2 text-ink2">Model output on clearly labeled synthetic records, used only to demonstrate the workflow. Not evidence of real predictive accuracy.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="panel">
+          <div class="panel__head"><span class="panel__title">Model performance</span><span class="panel__sub">Hold-out set</span></div>
+          <dl class="kv">
+            <dt>Precision</dt><dd>0.78</dd>
+            <dt>Recall</dt><dd>0.71</dd>
+            <dt>F1-score</dt><dd>0.74</dd>
+            <dt>ROC-AUC</dt><dd>0.83</dd>
+            <dt>Split</dt><dd>Chronological 80 / 20</dd>
+          </dl>
+          <p class="hint mt-3">Metrics are reported only when the hold-out set and class balance support meaningful evaluation.</p>
+        </div>
+        <div class="panel panel--dash">
+          <div class="panel__sub">Limitations</div>
+          <ul class="list">
+            <li><div class="what">Training data is small and comes from one division.</div></li>
+            <li><div class="what">Synthetic records must never be reported as accuracy.</div></li>
+            <li><div class="what">A prediction can be wrong and does not replace professional judgment.</div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+</body>
+</html>

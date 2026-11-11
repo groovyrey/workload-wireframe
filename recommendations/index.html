@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Support | Faculty Workload System</title>
+<link rel="stylesheet" href="../assets/css/tokens.css">
+<link rel="stylesheet" href="../assets/css/app.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+<script src="../assets/js/shell.js" defer></script>
+<script src="../assets/js/app.js" defer></script>
+</head>
+<body class="app-body" data-role="admin" data-screen="recommendations" data-user="R. Centeno">
+<div class="app">
+  <header class="app__top" id="app-top"></header>
+  <nav class="app__nav" id="app-nav" aria-label="Primary"></nav>
+  <main class="app__main">
+    <div class="section__head">
+      <div>
+        <h1 class="section__title">Faculty support recommendations</h1>
+        <p class="hint">Predefined rules, each shown with the condition that fired</p>
+      </div>
+      <button class="btn btn--ghost" type="button">Refresh</button>
+    </div>
+
+    <div class="toolbar">
+      <div class="form-row grow"><label for="rec-teacher">Teacher</label><select class="input" id="rec-teacher"><option>All faculty</option><option>T02</option><option>T03</option><option>T05</option><option>T08</option></select></div>
+      <div class="form-row"><label for="rec-condition">Condition</label><select class="input" id="rec-condition"><option>All conditions</option><option>Deadline overlap</option><option>Above load ceiling</option><option>Overdue</option></select></div>
+      <div class="form-row"><label for="rec-status">Status</label><select class="input" id="rec-status"><option>Open</option><option>All</option><option>Done</option></select></div>
+    </div>
+
+    <div class="grid grid--sidebar">
+      <div class="panel">
+        <div class="panel__head"><span class="panel__title">Recommendations</span><span class="panel__sub">4 open</span></div>
+        <div class="rule">
+          <div class="rule__id">R1</div>
+          <div class="rule__body"><strong>Rebalance two documentation deadlines</strong><p>T02 has three tasks due on the same day. Move one non-urgent report by one working day.</p></div>
+          <span class="status status--progress">Open</span>
+        </div>
+        <div class="rule">
+          <div class="rule__id">R2</div>
+          <div class="rule__body"><strong>Offer item-analysis coaching</strong><p>T05 has no prior record for assessment analysis and a deadline within 3 days. Pair with a teacher who has completed the task type.</p></div>
+          <span class="status status--progress">Open</span>
+        </div>
+        <div class="rule">
+          <div class="rule__id">R3</div>
+          <div class="rule__body"><strong>Reduce non-teaching load for one week</strong><p>T08 is above the configured weekly load ceiling. Defer one optional institutional task.</p></div>
+          <span class="status status--progress">Open</span>
+        </div>
+        <div class="rule">
+          <div class="rule__id">R4</div>
+          <div class="rule__body"><strong>Schedule a check-in before the deadline</strong><p>T03 has an overdue task and two approaching deadlines. Short check-in with the school head.</p></div>
+          <span class="status status--done">Done</span>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="panel">
+          <div class="panel__head"><span class="panel__title">How a rule fires</span><span class="panel__sub">Logic</span></div>
+          <dl class="kv">
+            <dt>Input</dt><dd>Load hours, deadline spacing, task history, overdue count</dd>
+            <dt>Match</dt><dd>Condition crossed against a defined threshold</dd>
+            <dt>Output</dt><dd>One recommendation with its rule ID</dd>
+            <dt>Review</dt><dd>School head accepts, defers, or dismisses</dd>
+          </dl>
+          <p class="hint mt-3">No recommendation is applied automatically.</p>
+        </div>
+        <div class="panel panel--dash">
+          <div class="panel__sub">Guardrail</div>
+          <p class="mt-2 text-ink2">Recommendations follow fixed rules and do not replace professional judgment. Dismissed suggestions are logged, not hidden.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+</body>
+</html>

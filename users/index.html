@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Users and access | Faculty Workload System</title>
+<link rel="stylesheet" href="../assets/css/tokens.css">
+<link rel="stylesheet" href="../assets/css/app.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+<script src="../assets/js/shell.js" defer></script>
+<script src="../assets/js/app.js" defer></script>
+</head>
+<body class="app-body" data-role="admin" data-screen="users" data-user="R. Centeno">
+<div class="app">
+  <header class="app__top" id="app-top"></header>
+  <nav class="app__nav" id="app-nav" aria-label="Primary"></nav>
+  <main class="app__main">
+    <div class="section__head">
+      <div>
+        <h1 class="section__title">Data security and user access</h1>
+        <p class="hint">Accounts, roles, and the permission matrix</p>
+      </div>
+      <button class="btn" type="button">Add user</button>
+    </div>
+
+    <div class="toolbar">
+      <div class="form-row grow"><label for="user-search">Search</label><input class="input" id="user-search" type="search" placeholder="Name or email"></div>
+      <div class="form-row"><label for="user-role">Role</label><select class="input" id="user-role"><option>All roles</option><option>Teacher</option><option>School head</option><option>ICT coordinator</option></select></div>
+    </div>
+
+    <div class="grid grid--sidebar">
+      <div class="section">
+        <div class="panel">
+          <div class="panel__head"><span class="panel__title">Accounts</span><span class="panel__sub">12 records</span></div>
+          <table class="wf-table">
+            <thead><tr><th>Name</th><th>Role</th><th>Strand</th><th>Status</th><th>Last access</th></tr></thead>
+            <tbody>
+              <tr><td>T01, R. Santos</td><td>Teacher</td><td>STEM</td><td class="status status--done">Active</td><td>9 Nov 2026</td></tr>
+              <tr><td>T02, M. Reyes</td><td>Teacher</td><td>STEM</td><td class="status status--done">Active</td><td>9 Nov 2026</td></tr>
+              <tr><td>T05, K. Bautista</td><td>Teacher</td><td>ABM</td><td class="status status--done">Active</td><td>8 Nov 2026</td></tr>
+              <tr><td>R. Centeno</td><td>School head</td><td>All</td><td class="status status--done">Active</td><td>9 Nov 2026</td></tr>
+              <tr><td>L. Domingo</td><td>Faculty dev coordinator</td><td>All</td><td class="status status--pending">Invited</td><td>none</td></tr>
+              <tr><td>ICT Coordinator</td><td>ICT coordinator</td><td>All</td><td class="status status--done">Active</td><td>7 Nov 2026</td></tr>
+              <tr><td>T09, P. Garcia</td><td>Teacher</td><td>HUMSS</td><td class="status status--overdue">Deactivated</td><td>12 Oct 2026</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="panel">
+          <div class="panel__head"><span class="panel__title">Audit log</span><span class="panel__sub">Read only</span></div>
+          <ul class="list">
+            <li><div class="what">R. Centeno edited T08 workload<small>Changed 18 to 20 hours</small></div><div class="when">9 Nov 08:42</div></li>
+            <li><div class="what">L. Domingo invited<small>Role: faculty dev coordinator</small></div><div class="when">8 Nov 15:10</div></li>
+            <li><div class="what">T09 deactivated<small>Reason: transferred out</small></div><div class="when">12 Oct 09:03</div></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="panel">
+          <div class="panel__head"><span class="panel__title">Permissions</span><span class="panel__sub">By role</span></div>
+          <table class="wf-table matrix">
+            <thead><tr><th>Capability</th><th>Teacher</th><th>Head</th><th>ICT</th></tr></thead>
+            <tbody>
+              <tr><td>View own workload</td><td class="y">yes</td><td class="y">yes</td><td class="n">no</td></tr>
+              <tr><td>Edit own workload</td><td class="y">yes</td><td class="y">yes</td><td class="n">no</td></tr>
+              <tr><td>View all faculty</td><td class="n">no</td><td class="y">yes</td><td class="n">no</td></tr>
+              <tr><td>View predictions</td><td class="n">no</td><td class="y">yes</td><td class="n">no</td></tr>
+              <tr><td>Manage accounts</td><td class="n">no</td><td class="y">yes</td><td class="y">yes</td></tr>
+              <tr><td>Export reports</td><td class="n">no</td><td class="y">yes</td><td class="n">no</td></tr>
+            </tbody>
+          </table>
+          <p class="hint mt-3">Capabilities are checked on the server for every request, not only hidden in the interface.</p>
+        </div>
+        <div class="panel panel--dash">
+          <div class="panel__sub">Security controls</div>
+          <ul class="list">
+            <li><div class="what">Hashed passwords and session expiry</div></li>
+            <li><div class="what">Role-based access on every endpoint</div></li>
+            <li><div class="what">Encrypted records at rest and in transit</div></li>
+            <li><div class="what">Audit log of record changes</div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+</body>
+</html>

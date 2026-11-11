@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tasks | Faculty Workload System</title>
+<link rel="stylesheet" href="../assets/css/tokens.css">
+<link rel="stylesheet" href="../assets/css/app.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+<script src="../assets/js/shell.js" defer></script>
+<script src="../assets/js/app.js" defer></script>
+</head>
+<body class="app-body" data-role="teacher" data-screen="tasks" data-user="A. Dela Cruz">
+<div class="app">
+  <header class="app__top" id="app-top"></header>
+  <nav class="app__nav" id="app-nav" aria-label="Primary"></nav>
+  <main class="app__main">
+    <div class="section__head">
+      <div>
+        <h1 class="section__title">Tasks</h1>
+        <p class="hint" id="task-count">7 tasks</p>
+      </div>
+      <button class="btn" type="button">New task</button>
+    </div>
+
+    <div class="toolbar">
+      <div class="form-row grow"><label for="task-search">Search</label><input class="input" id="task-search" type="search" placeholder="Title or subject"></div>
+      <div class="form-row"><label for="task-filter">Status</label>
+        <select class="input" id="task-filter">
+          <option value="all">All</option>
+          <option value="pending">Pending</option>
+          <option value="progress">In progress</option>
+          <option value="done">Completed</option>
+          <option value="overdue">Overdue</option>
+        </select>
+      </div>
+      <div class="form-row"><label for="task-due">Due</label><select class="input" id="task-due"><option>Next 14 days</option><option>This week</option><option>Overdue</option></select></div>
+    </div>
+
+    <div class="grid grid--sidebar">
+      <div class="panel">
+        <table class="wf-table" id="task-table">
+          <thead><tr><th>Task</th><th>Type</th><th>Due</th><th class="num">Days left</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr data-status="overdue"><td>Quarter 2 item analysis</td><td>Assessment</td><td>11 Nov</td><td class="num">0</td><td class="status status--overdue">Overdue</td></tr>
+            <tr data-status="progress"><td>Class record, 11-STEM-A</td><td>Documentation</td><td>13 Nov</td><td class="num">2</td><td class="status status--progress">In progress</td></tr>
+            <tr data-status="pending"><td>Lesson plan, Week 4</td><td>Instruction</td><td>14 Nov</td><td class="num">3</td><td class="status status--pending">Pending</td></tr>
+            <tr data-status="pending"><td>Advisory meeting minutes</td><td>Reporting</td><td>15 Nov</td><td class="num">4</td><td class="status status--pending">Pending</td></tr>
+            <tr data-status="pending"><td>Learner progress summary</td><td>Reporting</td><td>18 Nov</td><td class="num">7</td><td class="status status--pending">Pending</td></tr>
+            <tr data-status="pending"><td>Summative test, ABM-B</td><td>Assessment</td><td>21 Nov</td><td class="num">10</td><td class="status status--pending">Pending</td></tr>
+            <tr data-status="done"><td>Week 3 lesson plans</td><td>Instruction</td><td>8 Nov</td><td class="num">-3</td><td class="status status--done">Completed</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="section">
+        <div class="panel">
+          <div class="panel__head"><span class="panel__title">Notifications</span><span class="state state--active">Unread 3</span></div>
+          <ul class="list">
+            <li><div class="what">Item analysis is overdue<small>Deadline passed 5:00 PM today</small></div><div class="when">2h</div></li>
+            <li><div class="what">Class record due in 2 days<small>Reminder set by school head</small></div><div class="when">5h</div></li>
+            <li><div class="what">New support suggestion<small>See the overview panel</small></div><div class="when">1d</div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+</body>
+</html>

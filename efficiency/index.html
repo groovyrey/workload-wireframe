@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Efficiency | Faculty Workload System</title>
+<link rel="stylesheet" href="../assets/css/tokens.css">
+<link rel="stylesheet" href="../assets/css/app.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+<script src="../assets/js/shell.js" defer></script>
+<script src="../assets/js/app.js" defer></script>
+</head>
+<body class="app-body" data-role="admin" data-screen="efficiency" data-user="R. Centeno">
+<div class="app">
+  <header class="app__top" id="app-top"></header>
+  <nav class="app__nav" id="app-nav" aria-label="Primary"></nav>
+  <main class="app__main">
+    <div class="section__head">
+      <div>
+        <h1 class="section__title">Teaching-related task efficiency</h1>
+        <p class="hint">Descriptive analytics on task completion, last 30 days</p>
+      </div>
+    </div>
+
+    <div class="toolbar">
+      <div class="form-row grow"><label for="eff-teacher">Teacher</label><select class="input" id="eff-teacher"><option>All faculty</option><option>T01</option><option>T02</option><option>T05</option></select></div>
+      <div class="form-row"><label for="eff-period">Period</label><select class="input" id="eff-period"><option>Last 30 days</option><option>Quarter 2</option></select></div>
+      <div class="form-row"><label for="eff-type">Task type</label><select class="input" id="eff-type"><option>All types</option><option>Assessment</option><option>Documentation</option><option>Reporting</option></select></div>
+    </div>
+
+    <div class="grid grid--4">
+      <div class="stat"><div class="stat__label">Completion rate</div><div class="stat__value">88%</div><div class="stat__foot">completed divided by assigned</div></div>
+      <div class="stat"><div class="stat__label">Average processing</div><div class="stat__value">2.4 d</div><div class="stat__foot">assigned to submitted</div></div>
+      <div class="stat"><div class="stat__label">On-time submission</div><div class="stat__value">90%</div><div class="stat__foot">on or before due date</div></div>
+      <div class="stat"><div class="stat__label">Overdue now</div><div class="stat__value">3</div><div class="stat__foot">tasks past deadline</div></div>
+    </div>
+
+    <div class="grid grid--sidebar">
+      <div class="section">
+        <div class="panel">
+          <div class="panel__head"><span class="panel__title">Completion by week</span><span class="panel__sub">Recorded, 8 weeks</span></div>
+          <div class="chart">
+            <div class="chart__col"><div class="chart__bar" style="height:40%"></div><span class="chart__x">W1</span></div>
+            <div class="chart__col"><div class="chart__bar" style="height:52%"></div><span class="chart__x">W2</span></div>
+            <div class="chart__col"><div class="chart__bar" style="height:48%"></div><span class="chart__x">W3</span></div>
+            <div class="chart__col"><div class="chart__bar" style="height:62%"></div><span class="chart__x">W4</span></div>
+            <div class="chart__col"><div class="chart__bar" style="height:58%"></div><span class="chart__x">W5</span></div>
+            <div class="chart__col"><div class="chart__bar" style="height:72%"></div><span class="chart__x">W6</span></div>
+            <div class="chart__col"><div class="chart__bar" style="height:66%"></div><span class="chart__x">W7</span></div>
+            <div class="chart__col"><div class="chart__bar" style="height:80%"></div><span class="chart__x">W8</span></div>
+          </div>
+          <div class="legend"><span><i class="solid"></i>Completed tasks as share of assigned</span></div>
+        </div>
+
+        <div class="panel">
+          <div class="panel__head"><span class="panel__title">Per-teacher breakdown</span><span class="panel__sub">Recorded</span></div>
+          <table class="wf-table">
+            <thead><tr><th>Teacher</th><th class="num">Assigned</th><th class="num">Completed</th><th class="num">Avg days</th><th class="num">On time</th><th class="num">Overdue</th></tr></thead>
+            <tbody>
+              <tr><td>T01, R. Santos</td><td class="num">18</td><td class="num">17</td><td class="num">2.0</td><td class="num">94%</td><td class="num">0</td></tr>
+              <tr><td>T02, M. Reyes</td><td class="num">22</td><td class="num">18</td><td class="num">3.1</td><td class="num">82%</td><td class="num">1</td></tr>
+              <tr><td>T03, J. Lim</td><td class="num">19</td><td class="num">17</td><td class="num">2.6</td><td class="num">89%</td><td class="num">1</td></tr>
+              <tr><td>T04, A. Dela Cruz</td><td class="num">20</td><td class="num">18</td><td class="num">2.2</td><td class="num">92%</td><td class="num">1</td></tr>
+              <tr><td>T05, K. Bautista</td><td class="num">24</td><td class="num">19</td><td class="num">3.4</td><td class="num">79%</td><td class="num">2</td></tr>
+            </tbody>
+          </table>
+          <p class="hint mt-3">Showing 5 of 10. Load context is on the overview; a lower rate can reflect higher assigned load.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="panel panel--dash">
+          <div class="panel__sub">Definitions</div>
+          <dl class="kv mt-3">
+            <dt>Completion</dt><dd>Completed tasks divided by assigned tasks in the period.</dd>
+            <dt>Processing</dt><dd>Days between assignment and submission.</dd>
+            <dt>On time</dt><dd>Submitted on or before the recorded due date.</dd>
+          </dl>
+        </div>
+        <div class="panel panel--dash">
+          <div class="panel__sub">Limits</div>
+          <p class="mt-2 text-ink2">These figures describe task handling. They are not a measure of instructional effectiveness, student learning, or overall teacher performance.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reports | Faculty Workload System</title>
+<link rel="stylesheet" href="../assets/css/tokens.css">
+<link rel="stylesheet" href="../assets/css/app.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+<script src="../assets/js/shell.js" defer></script>
+<script src="../assets/js/app.js" defer></script>
+</head>
+<body class="app-body" data-role="admin" data-screen="reports" data-user="R. Centeno">
+<div class="app">
+  <header class="app__top" id="app-top"></header>
+  <nav class="app__nav" id="app-nav" aria-label="Primary"></nav>
+  <main class="app__main">
+    <div class="section__head">
+      <div>
+        <h1 class="section__title">Workload and completion reports</h1>
+        <p class="hint">Preview, accuracy check, then export</p>
+      </div>
+      <button class="btn" type="button">Generate</button>
+    </div>
+
+    <div class="toolbar">
+      <div class="form-row grow"><label for="rep-type">Report type</label><select class="input" id="rep-type"><option>Faculty workload summary</option><option>Task completion report</option><option>Overdue task log</option></select></div>
+      <div class="form-row"><label for="rep-period">Period</label><select class="input" id="rep-period"><option>Quarter 2</option><option>Quarter 1</option></select></div>
+      <div class="form-row"><label for="rep-strand">Strand</label><select class="input" id="rep-strand"><option>All strands</option><option>STEM</option><option>ABM</option></select></div>
+    </div>
+
+    <div class="grid grid--sidebar">
+      <div class="section">
+        <div class="panel">
+          <div class="panel__head"><span class="panel__title">Report preview</span><span class="panel__sub">Faculty workload summary, Quarter 2</span></div>
+          <table class="wf-table">
+            <thead><tr><th>Teacher</th><th>Strand</th><th class="num">Load h/wk</th><th class="num">Assigned</th><th class="num">Completed</th><th class="num">On time</th></tr></thead>
+            <tbody>
+              <tr><td>T01, R. Santos</td><td>STEM</td><td class="num">20</td><td class="num">18</td><td class="num">17</td><td class="num">94%</td></tr>
+              <tr><td>T02, M. Reyes</td><td>STEM</td><td class="num">24</td><td class="num">22</td><td class="num">18</td><td class="num">82%</td></tr>
+              <tr><td>T03, J. Lim</td><td>ABM</td><td class="num">19</td><td class="num">19</td><td class="num">17</td><td class="num">89%</td></tr>
+              <tr><td>T04, A. Dela Cruz</td><td>STEM</td><td class="num">24</td><td class="num">20</td><td class="num">18</td><td class="num">92%</td></tr>
+              <tr><td>T05, K. Bautista</td><td>ABM</td><td class="num">26</td><td class="num">24</td><td class="num">19</td><td class="num">79%</td></tr>
+            </tbody>
+          </table>
+          <div class="mt-4">
+            <button class="btn btn--ghost" type="button">Export CSV</button>
+            <button class="btn btn--ghost" type="button">Export PDF</button>
+            <button class="btn btn--quiet" type="button">Print</button>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel__head"><span class="panel__title">Accuracy check</span><span class="state state--active">Verified</span></div>
+          <dl class="kv">
+            <dt>Fields checked</dt><dd>60</dd>
+            <dt>Matched</dt><dd>58</dd>
+            <dt>Mismatched</dt><dd>2</dd>
+            <dt>Report accuracy</dt><dd>96.7%</dd>
+          </dl>
+          <p class="note note--warn mt-3">A mismatch blocks the verified state. Mismatched rows show their source record IDs so the discrepancy can be traced.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="panel panel--dash">
+          <div class="panel__sub">Report set</div>
+          <ul class="list">
+            <li><div class="what">Faculty workload summary</div></li>
+            <li><div class="what">Task completion report</div></li>
+            <li><div class="what">Overdue task log</div></li>
+            <li><div class="what">Support recommendation log</div></li>
+          </ul>
+        </div>
+        <div class="panel panel--dash">
+          <div class="panel__sub">Accuracy method</div>
+          <p class="mt-2 text-ink2">Generated fields are compared with verified reference records. Export does not modify any record.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Overview | Faculty Workload System</title>
+<link rel="stylesheet" href="../assets/css/tokens.css">
+<link rel="stylesheet" href="../assets/css/app.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+<script src="../assets/js/shell.js" defer></script>
+<script src="../assets/js/app.js" defer></script>
+</head>
+<body class="app-body" data-role="teacher" data-screen="teacher-home" data-user="A. Dela Cruz">
+<div class="app">
+  <header class="app__top" id="app-top"></header>
+  <nav class="app__nav" id="app-nav" aria-label="Primary"></nav>
+  <main class="app__main">
+    <div class="section__head">
+      <div>
+        <h1 class="section__title">Good morning, Teacher Dela Cruz</h1>
+        <p class="hint">Week of 9 to 13 November, Quarter 2</p>
+      </div>
+      <a class="btn btn--ghost" href="../workload/index.html">Open workload</a>
+    </div>
+
+    <div class="grid grid--4">
+      <div class="stat"><div class="stat__label">Teaching load</div><div class="stat__value">24 h</div><div class="stat__foot">per week, 4 classes</div></div>
+      <div class="stat"><div class="stat__label">Due this week</div><div class="stat__value">6</div><div class="stat__foot">tasks</div></div>
+      <div class="stat"><div class="stat__label">Overdue</div><div class="stat__value">1</div><div class="stat__foot">needs action</div></div>
+      <div class="stat"><div class="stat__label">On-time submission</div><div class="stat__value">92%</div><div class="stat__foot">last 30 days</div></div>
+    </div>
+
+    <div class="grid grid--sidebar">
+      <div class="section">
+        <div class="panel">
+          <div class="panel__head"><span class="panel__title">Upcoming deadlines</span><span class="panel__sub">Next 7 days</span></div>
+          <ul class="list">
+            <li><div class="what">Submit Quarter 2 item analysis<small>Grade 11, General Mathematics</small></div><div class="when">Today, 5:00 PM</div></li>
+            <li><div class="what">Class record, Section 11-STEM-A<small>Administrative documentation</small></div><div class="when">Wed, 12:00 NN</div></li>
+            <li><div class="what">Lesson plan, Week 4<small>Instructional preparation</small></div><div class="when">Thu, 8:00 AM</div></li>
+            <li><div class="what">Advisory meeting minutes<small>Institutional reporting</small></div><div class="when">Fri, 3:00 PM</div></li>
+          </ul>
+        </div>
+
+        <div class="panel">
+          <div class="panel__head"><span class="panel__title">Task status</span><span class="panel__sub">This week</span></div>
+          <div class="grid grid--4">
+            <div><div class="hint">Completed</div><div class="stat__value">3</div></div>
+            <div><div class="hint">In progress</div><div class="stat__value">2</div></div>
+            <div><div class="hint">Pending</div><div class="stat__value">4</div></div>
+            <div><div class="hint">Overdue</div><div class="stat__value">1</div></div>
+          </div>
+          <div class="bar mt-4"><span style="width:30%"></span></div>
+          <div class="hint mt-2">3 of 10 tasks completed</div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="panel">
+          <div class="panel__head"><span class="panel__title">Support suggestions</span><span class="panel__sub">Rule-based</span></div>
+          <div class="rule">
+            <div class="rule__id">R2</div>
+            <div class="rule__body"><strong>Move one documentation task earlier</strong><p>Two deadlines fall on Wednesday. Report preparation is the longer task.</p></div>
+          </div>
+          <div class="rule">
+            <div class="rule__id">R4</div>
+            <div class="rule__body"><strong>Ask for coaching on item analysis</strong><p>Deadline is near and no prior submission is on record for this task type.</p></div>
+          </div>
+          <p class="hint mt-3">Suggestions are decision support, not a rating of teaching performance.</p>
+        </div>
+
+        <div class="panel panel--dash">
+          <div class="panel__sub">This week's load</div>
+          <div class="schedule mt-3">
+            <div class="h">Time</div><div class="h">Mon</div><div class="h">Tue</div><div class="h">Wed</div><div class="h">Thu</div><div class="h">Fri</div>
+            <div>7:30</div><div class="slot">11-STEM-A</div><div class="slot">11-STEM-B</div><div class="slot slot--dash">Prep</div><div class="slot">11-STEM-A</div><div class="slot">11-STEM-B</div>
+            <div>9:30</div><div class="slot">11-ABM-A</div><div class="slot slot--dash">Prep</div><div class="slot">11-ABM-A</div><div class="slot">11-STEM-B</div><div class="slot slot--dash">Prep</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+</body>
+</html>

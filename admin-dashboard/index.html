@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Overview | Faculty Workload System</title>
+<link rel="stylesheet" href="../assets/css/tokens.css">
+<link rel="stylesheet" href="../assets/css/app.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+<script src="../assets/js/shell.js" defer></script>
+<script src="../assets/js/app.js" defer></script>
+</head>
+<body class="app-body" data-role="admin" data-screen="admin-dashboard" data-user="R. Centeno">
+<div class="app">
+  <header class="app__top" id="app-top"></header>
+  <nav class="app__nav" id="app-nav" aria-label="Primary"></nav>
+  <main class="app__main">
+    <div class="section__head">
+      <div>
+        <h1 class="section__title">Division overview</h1>
+        <p class="hint">Quarter 2, SY 2026-2027</p>
+      </div>
+      <a class="btn btn--ghost" href="../predictions/index.html">Open predictions</a>
+    </div>
+
+    <div class="toolbar">
+      <div class="form-row grow"><label for="dash-period">Period</label><select class="input" id="dash-period"><option>Quarter 2, SY 2026-2027</option><option>Quarter 1</option></select></div>
+      <div class="form-row"><label for="dash-strand">Strand</label><select class="input" id="dash-strand"><option>All strands</option><option>STEM</option><option>ABM</option><option>HUMSS</option></select></div>
+      <div class="form-row"><label for="dash-teacher">Teacher</label><select class="input" id="dash-teacher"><option>All faculty</option><option>T01</option><option>T02</option><option>T05</option></select></div>
+    </div>
+
+    <div class="grid grid--4">
+      <div class="stat"><div class="stat__label">Faculty</div><div class="stat__value">10</div><div class="stat__foot">in this division</div></div>
+      <div class="stat"><div class="stat__label">Average weekly load</div><div class="stat__value">22.4 h</div><div class="stat__foot">across faculty</div></div>
+      <div class="stat"><div class="stat__label">At-risk tasks</div><div class="stat__value">5</div><div class="stat__foot">predicted, not recorded</div></div>
+      <div class="stat"><div class="stat__label">Completion rate</div><div class="stat__value">88%</div><div class="stat__foot">recorded, Quarter 2</div></div>
+    </div>
+
+    <div class="grid grid--sidebar">
+      <div class="section">
+        <div class="panel">
+          <div class="panel__head"><span class="panel__title">Workload distribution</span><span class="panel__sub">Recorded hours per week</span></div>
+          <div class="chart">
+            <div class="chart__col"><div class="chart__bar" style="height:56%"></div><span class="chart__x">T01</span></div>
+            <div class="chart__col"><div class="chart__bar chart__bar--hi" style="height:92%"></div><span class="chart__x">T02</span></div>
+            <div class="chart__col"><div class="chart__bar" style="height:64%"></div><span class="chart__x">T03</span></div>
+            <div class="chart__col"><div class="chart__bar" style="height:70%"></div><span class="chart__x">T04</span></div>
+            <div class="chart__col"><div class="chart__bar chart__bar--hi" style="height:88%"></div><span class="chart__x">T05</span></div>
+            <div class="chart__col"><div class="chart__bar" style="height:52%"></div><span class="chart__x">T06</span></div>
+            <div class="chart__col"><div class="chart__bar" style="height:60%"></div><span class="chart__x">T07</span></div>
+            <div class="chart__col"><div class="chart__bar" style="height:76%"></div><span class="chart__x">T08</span></div>
+            <div class="chart__col"><div class="chart__bar" style="height:58%"></div><span class="chart__x">T09</span></div>
+            <div class="chart__col"><div class="chart__bar" style="height:66%"></div><span class="chart__x">T10</span></div>
+          </div>
+          <div class="legend"><span><i class="solid"></i>Above average load</span><span><i></i>Within range</span></div>
+        </div>
+
+        <div class="panel">
+          <div class="panel__head"><span class="panel__title">Completion trend</span><span class="panel__sub">Recorded, 6 weeks</span></div>
+          <div class="chart">
+            <div class="chart__col"><div class="chart__bar" style="height:44%"></div><span class="chart__x">W1</span></div>
+            <div class="chart__col"><div class="chart__bar" style="height:58%"></div><span class="chart__x">W2</span></div>
+            <div class="chart__col"><div class="chart__bar" style="height:52%"></div><span class="chart__x">W3</span></div>
+            <div class="chart__col"><div class="chart__bar" style="height:70%"></div><span class="chart__x">W4</span></div>
+            <div class="chart__col"><div class="chart__bar" style="height:66%"></div><span class="chart__x">W5</span></div>
+            <div class="chart__col"><div class="chart__bar" style="height:80%"></div><span class="chart__x">W6</span></div>
+          </div>
+          <div class="legend"><span><i class="solid"></i>Tasks completed on time</span></div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="panel">
+          <div class="panel__head"><span class="panel__title">At risk this week</span><span class="state state--active">Predicted</span></div>
+          <ul class="list">
+            <li><div class="what">Item analysis, Section B<small>T02, due Wed</small></div><div class="when">0.81</div></li>
+            <li><div class="what">Class records, 4 sections<small>T05, due Thu</small></div><div class="when">0.74</div></li>
+            <li><div class="what">Advisory minutes<small>T02, due Fri</small></div><div class="when">0.63</div></li>
+            <li><div class="what">Lesson plans, Week 4<small>T08, due Fri</small></div><div class="when">0.57</div></li>
+            <li><div class="what">Report cards, 2 sections<small>T03, due Fri</small></div><div class="when">0.52</div></li>
+          </ul>
+          <p class="hint mt-3">Numbers are delay probability, not a count of late work.</p>
+        </div>
+
+        <div class="panel panel--dash">
+          <div class="panel__sub">Model status</div>
+          <dl class="kv mt-3">
+            <dt>Records</dt><dd>180 labeled task records</dd>
+            <dt>Model</dt><dd>Gradient boosted trees</dd>
+            <dt>Validation</dt><dd>Chronological hold-out</dd>
+            <dt>Updated</dt><dd>9 Nov 2026, 06:00</dd>
+          </dl>
+          <p class="note note--warn mt-3">Predictions require sufficient labeled history. Below the threshold, the panel shows the insufficient-data state instead of a score.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+</body>
+</html>

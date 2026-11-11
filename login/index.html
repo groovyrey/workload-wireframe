@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sign in | Faculty Workload System</title>
+<link rel="stylesheet" href="../assets/css/tokens.css">
+<link rel="stylesheet" href="../assets/css/app.css">
+<link rel="stylesheet" href="../assets/css/components.css">
+<script src="../assets/js/app.js" defer></script>
+</head>
+<body class="app-body" data-role="public" data-screen="login">
+<main class="auth-screen">
+  <div class="auth">
+    <div class="auth__brand">
+      <div class="mark">Division of San Jose del Monte</div>
+      <h1>Faculty Workload Management and Support System</h1>
+      <p>Authorized faculty and school heads only. Workload records are protected under the Data Privacy Act of 2012.</p>
+    </div>
+    <form class="auth__body" id="login-form">
+      <div class="form-row">
+        <label for="email">DepEd email</label>
+        <input class="input" id="email" type="email" placeholder="name@deped.gov.ph" autocomplete="username">
+      </div>
+      <div class="form-row">
+        <label for="pass">Password</label>
+        <input class="input" id="pass" type="password" placeholder="Password" autocomplete="current-password">
+      </div>
+      <div class="form-row">
+        <label for="login-role">Account type</label>
+        <select class="input" id="login-role">
+          <option value="teacher">Teacher</option>
+          <option value="admin">School head</option>
+        </select>
+      </div>
+      <button class="btn" type="submit">Sign in</button>
+    </form>
+    <div class="auth__foot">Sessions expire after 30 minutes of inactivity. Sign-in attempts are logged.</div>
+  </div>
+</main>
+</body>
+</html>
